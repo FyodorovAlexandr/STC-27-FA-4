@@ -14,7 +14,8 @@ public class BubbleSort implements PersonSort{
      *
      * @param persons массив объектов
      */
-    public void sortB (Person[] persons) {
+    @Override
+    public void sort (Person[] persons) {
         long startTime = currentTimeMillis();
         int size = persons.length;
         for (int i = 0; i < size - 1; i++) {
@@ -27,12 +28,7 @@ public class BubbleSort implements PersonSort{
             }
         }
         long finishTime = currentTimeMillis();
-        out.println("Время работы сортировки пузырьком: " + (finishTime - startTime) + " милисекунды");
-
-    }
-
-    @Override
-    public void sort() {
         out.println("Сортировка пузырьком:");
+        out.println("Время работы сортировки пузырьком: " + (finishTime - startTime) + " милисекунды");
     }
 }

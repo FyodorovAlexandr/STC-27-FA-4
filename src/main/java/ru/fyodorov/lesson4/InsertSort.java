@@ -14,7 +14,8 @@ public class InsertSort implements PersonSort{
      *
      * @param persons массив объектов
      */
-    public void sortI (Person[] persons) {
+    @Override
+    public void sort (Person[] persons) {
         long startTime = System.currentTimeMillis();
         for (int i = 1; i < persons.length; i++) {
             Person current = persons[i];
@@ -26,11 +27,7 @@ public class InsertSort implements PersonSort{
             persons[j + 1] = current;
         }
         long finishTime = System.currentTimeMillis();
-        out.println("Время работы сортировки вставками: " + (finishTime - startTime) + " милисекунды");
-    }
-
-    @Override
-    public void sort() {
         out.println("Сортировка вставками:");
+        out.println("Время работы сортировки вставками: " + (finishTime - startTime) + " милисекунды");
     }
 }

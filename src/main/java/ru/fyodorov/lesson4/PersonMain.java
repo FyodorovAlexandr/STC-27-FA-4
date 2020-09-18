@@ -16,8 +16,7 @@ public class PersonMain {
             person[i] = new Person();
         }
         BubbleSort bubbleSort = new BubbleSort();
-        bubbleSort.sort();
-        bubbleSort.sortB(person);
+        bubbleSort.sort(person);
         for (Person value: person){
             out.println(value);
         }
@@ -27,8 +26,7 @@ public class PersonMain {
             person[i] = new Person();
         }
         InsertSort insertSort = new InsertSort();
-        insertSort.sort();
-        insertSort.sortI(person);
+        insertSort.sort(person);
         for (Person value: person){
             out.println(value);
         }
