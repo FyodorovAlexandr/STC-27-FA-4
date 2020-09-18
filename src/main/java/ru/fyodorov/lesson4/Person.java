@@ -11,9 +11,9 @@ public class Person implements Comparable<Person> {
     private final String name;
 
     public Person() {
-        this.age = (int) (Math.random() * 50);
         this.name = getNames();
         this.sex = PersonSex.randomSex();
+        age = (int) (Math.random() * 50);
     }
 
     public int getAge() {
@@ -35,7 +35,7 @@ public class Person implements Comparable<Person> {
             "Любовь", "Виктория", "Роман", "Оксана", "Денис", "Дарья", "Константин", "Вячеслав", "Вера", "Евгения",
             "Петр", "Антон"};
 
-    public static final int SIZENAMES = NAMES.length;
+    public static final int FILENAMES = NAMES.length;
     public static final Random RANDOM = new Random();
 
     /**
@@ -44,15 +44,14 @@ public class Person implements Comparable<Person> {
      * @return возвращает элемент из массива NAMES
      */
     public String getNames() {
-        return NAMES[RANDOM.nextInt(SIZENAMES)];
+        return NAMES[RANDOM.nextInt(FILENAMES)];
     }
 
     @Override
     public String toString() {
         return "Возраст:" + age +
                 ", пол:'" + sex + '\'' +
-                ", имя:'" + name + '\'' +
-                '}';
+                ", имя:'" + name + '\'';
     }
 
     /**
@@ -75,11 +74,11 @@ public class Person implements Comparable<Person> {
         }
         result = Integer.compare(getAge(), o.getAge());
         if (result != 0) {
-            return result * -1;
+            return result *-1;
         } else {
             result = getName().compareTo(o.getName());
             if (result == 0) {
-                throw new MyException("Возраст и имя одинаковые", getAge(), getName());
+                throw new MyException("Возраст и имя одинаковые");
             }
         }
         result = getName().compareTo(o.getName());

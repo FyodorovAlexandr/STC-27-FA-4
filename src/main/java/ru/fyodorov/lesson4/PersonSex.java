@@ -8,12 +8,11 @@ import java.util.Random;
  */
 public class PersonSex implements Comparable<PersonSex> {
 
-    private static final String MAN = "M";
-    private static final String WOMAN = "Ж";
-
-    private static final String[] VALUES = {MAN, WOMAN};
-    private static final int SIZE = VALUES.length;
-    private static final Random RANDOM = new Random();
+    public static final String MAN = "M";
+    public static final String WOMAN = "Ж";
+    public static final String[] VALUES = {MAN, WOMAN};
+    public static final int SIZE = VALUES.length;
+    public static final Random RANDOM = new Random();
 
     public String getMan() {
         return MAN;
@@ -43,13 +42,6 @@ public class PersonSex implements Comparable<PersonSex> {
     public int compareTo(PersonSex o) {
         int result;
         result = getMan().compareTo(o.getWoman());
-        if (result != 0) {
-            return result;
-        }
-        result = getWoman().compareTo(o.getWoman());
-        if (result != 0) {
-            return result;
-        }
         return result;
     }
 }

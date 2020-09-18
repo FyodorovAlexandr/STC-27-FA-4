@@ -1,5 +1,7 @@
 package ru.fyodorov.lesson4;
 
+import static java.lang.System.out;
+
 /**
  * @author Fyodorov Alexandr
  * @code PersonMain
@@ -9,25 +11,27 @@ package ru.fyodorov.lesson4;
 public class PersonMain {
     public static void main(String[] args) {
         Person[] person = new Person[50];
-        for (int i = 0; i < person.length; i++){
-            person[i] = new Person();
-        }
-
-        BubbleSort.sort(person);
-        System.out.println("Сортировка пузырьком");
-        for (Person value: person){
-            System.out.println(value);
-        }
-        System.out.println("-------------------------------------");
 
         for (int i = 0; i < person.length; i++){
             person[i] = new Person();
         }
-        InsertSort.sort(person);
-        System.out.println("Сортировка вставками");
+        BubbleSort bubbleSort = new BubbleSort();
+        bubbleSort.sort();
+        bubbleSort.sortB(person);
         for (Person value: person){
-            System.out.println(value);
+            out.println(value);
         }
-        System.out.println("-------------------------------------");
+        out.println("-------------------------------------");
+
+        for (int i = 0; i < person.length; i++){
+            person[i] = new Person();
+        }
+        InsertSort insertSort = new InsertSort();
+        insertSort.sort();
+        insertSort.sortI(person);
+        for (Person value: person){
+            out.println(value);
+        }
+        out.println("-------------------------------------");
     }
 }

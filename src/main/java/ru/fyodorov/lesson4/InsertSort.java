@@ -1,18 +1,20 @@
 package ru.fyodorov.lesson4;
 
+import static java.lang.System.out;
+
 /**
  * @code InsertSort
  *
  * Класс реализует сортировку вставками
  */
-public class InsertSort implements PersonSort {
+public class InsertSort implements PersonSort{
 
     /**
      * Метод сортировки вставками с использованием Comparable
      *
      * @param persons массив объектов
      */
-    public static void sort(Person[] persons) {
+    public void sortI (Person[] persons) {
         long startTime = System.currentTimeMillis();
         for (int i = 1; i < persons.length; i++) {
             Person current = persons[i];
@@ -24,6 +26,11 @@ public class InsertSort implements PersonSort {
             persons[j + 1] = current;
         }
         long finishTime = System.currentTimeMillis();
-        System.out.println("Время работы сортировки вставками: " + (finishTime - startTime) + " милисекунды");
+        out.println("Время работы сортировки вставками: " + (finishTime - startTime) + " милисекунды");
+    }
+
+    @Override
+    public void sort() {
+        out.println("Сортировка вставками:");
     }
 }

@@ -1,19 +1,21 @@
 package ru.fyodorov.lesson4;
 
+import static java.lang.System.*;
+
 /**
  * @code BubbleSort
  *
  * Класс реализует сортировку пузырьком
  */
-public class BubbleSort implements PersonSort {
+public class BubbleSort implements PersonSort{
 
     /**
      * Метод сортировки с использованием Comparable
      *
      * @param persons массив объектов
      */
-    public static void sort(Person[] persons) {
-        long startTime = System.currentTimeMillis();
+    public void sortB (Person[] persons) {
+        long startTime = currentTimeMillis();
         int size = persons.length;
         for (int i = 0; i < size - 1; i++) {
             for (int j = 0; j < size - i - 1; j++) {
@@ -24,8 +26,13 @@ public class BubbleSort implements PersonSort {
                 }
             }
         }
-        long finishTime = System.currentTimeMillis();
-        System.out.println("Время работы сортировки пузырьком: " + (finishTime - startTime) + " милисекунды");
+        long finishTime = currentTimeMillis();
+        out.println("Время работы сортировки пузырьком: " + (finishTime - startTime) + " милисекунды");
 
+    }
+
+    @Override
+    public void sort() {
+        out.println("Сортировка пузырьком:");
     }
 }
